@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CyOps Capture",
+  "version": "1.0.0",
+  "description": "One-click screenshot capture into the active CyberOps session with URL + page title as source metadata.",
+  "permissions": ["activeTab", "tabs", "storage"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CyOps Capture"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "quick-capture": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Capture visible tab and attach to the last-used session"
+    }
+  }
+}

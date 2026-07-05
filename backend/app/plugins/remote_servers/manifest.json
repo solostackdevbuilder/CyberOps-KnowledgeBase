@@ -1,0 +1,39 @@
+{
+  "id": "remote_servers",
+  "name": "Remote Servers",
+  "version": "1.0.0",
+  "plugin_type": "hybrid",
+  "author": "CyberOps",
+  "description": "Manage SSH connections to remote tool servers. Register servers with credentials, test connectivity, and discover installed tools so other plugins can offload work remotely.",
+  "license": "Apache-2.0",
+  "execution_mode": "both",
+  "permissions": [
+    "network:outbound",
+    "storage:read_write",
+    "credentials:read"
+  ],
+  "settings_schema": {
+    "connection_timeout": {
+      "type": "integer",
+      "default": 10,
+      "description": "SSH connection timeout in seconds"
+    },
+    "command_timeout": {
+      "type": "integer",
+      "default": 30,
+      "description": "Remote command execution timeout in seconds"
+    },
+    "known_tools": {
+      "type": "array",
+      "default": ["hashcat", "john", "nmap", "hydra", "gobuster", "nikto", "sqlmap", "nuclei", "masscan", "ffuf", "wfuzz", "crackmapexec", "responder", "impacket-secretsdump", "kerbrute", "bloodhound-python", "enum4linux"],
+      "description": "Tools to probe for on remote servers"
+    }
+  },
+  "frontend_pages": [
+    {
+      "path": "/plugins/remote_servers",
+      "name": "Remote Servers",
+      "icon": "Server"
+    }
+  ]
+}

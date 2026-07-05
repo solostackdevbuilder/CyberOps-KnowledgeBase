@@ -1,0 +1,1 @@
+"""Hashcat password cracking plugin."""

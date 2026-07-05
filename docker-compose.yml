@@ -1,0 +1,21 @@
+services:
+  cyberops:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      SERVE_FRONTEND: "1"
+      FRONTEND_DIST: /app/backend/static
+      DATA_DIR: ./data
+      # Optional: ANTHROPIC_API_KEY=  (prefer configuring in-app Settings after first launch)
+      #
+      # The Dockerfile sets CYBEROPS_BIND_HOST=0.0.0.0. The startup guard
+      # (app/core/startup_guards.py) refuses to run on a public bind
+      # unless CYBEROPS_TRUST_NETWORK=1 is explicitly set, which is how
+      # the operator confirms that an authenticating reverse proxy
+      # (YubiKey, oauth2-proxy, Cloudflare Access, Tailscale, VPN) sits
+      # in front. Uncomment the line below ONLY after that gate is in
+      # place — otherwise leave commented to keep the guardrail active.
+      # CYBEROPS_TRUST_NETWORK: "1"
+    volumes:
+      - ./backend/data:/app/backend/data

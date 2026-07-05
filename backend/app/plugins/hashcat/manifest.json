@@ -1,0 +1,48 @@
+{
+  "id": "hashcat",
+  "name": "Hashcat Password Cracker",
+  "version": "1.0.0",
+  "plugin_type": "tool",
+  "author": "CyberOps",
+  "description": "Password cracking with hashcat - supports local CLI and remote agent execution",
+  "license": "Apache-2.0",
+  "execution_mode": "both",
+  "permissions": [
+    "shell:execute",
+    "network:outbound",
+    "storage:read_write"
+  ],
+  "settings_schema": {
+    "execution_mode": {
+      "type": "string",
+      "enum": ["local", "remote"],
+      "default": "local",
+      "description": "Run hashcat locally or on a remote cracking rig"
+    },
+    "agent_url": {
+      "type": "string",
+      "description": "Remote agent URL (required if execution_mode=remote)"
+    },
+    "agent_api_key": {
+      "type": "string",
+      "description": "API key for remote agent authentication"
+    },
+    "default_wordlist": {
+      "type": "string",
+      "default": "rockyou.txt",
+      "description": "Default wordlist for dictionary attacks"
+    },
+    "max_runtime_seconds": {
+      "type": "integer",
+      "default": 3600,
+      "description": "Maximum runtime per crack job in seconds"
+    }
+  },
+  "frontend_pages": [
+    {
+      "path": "/plugins/hashcat",
+      "name": "Hashcat",
+      "icon": "Key"
+    }
+  ]
+}

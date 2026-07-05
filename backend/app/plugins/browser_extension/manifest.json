@@ -1,0 +1,21 @@
+{
+  "id": "browser_extension",
+  "name": "Browser Extension",
+  "version": "1.0.0",
+  "plugin_type": "hybrid",
+  "author": "CyberOps",
+  "description": "Companion Chrome extension for one-click screenshot capture into the active session. Captures the visible tab along with URL and page title as source metadata.",
+  "license": "Apache-2.0",
+  "execution_mode": "local",
+  "permissions": [
+    "storage:read_write"
+  ],
+  "settings_schema": {},
+  "frontend_pages": [
+    {
+      "path": "/plugins/browser_extension",
+      "name": "Browser Extension",
+      "icon": "Chrome"
+    }
+  ]
+}

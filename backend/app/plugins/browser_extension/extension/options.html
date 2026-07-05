@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CyOps Capture — Options</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 520px;
+        margin: 24px auto;
+        padding: 0 16px;
+        color: #1a1a1a;
+      }
+      h1 { font-size: 18px; }
+      label { display: block; margin-top: 14px; font-weight: 600; }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px 8px;
+        font: inherit;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        margin-top: 12px;
+        padding: 7px 14px;
+        font: inherit;
+        font-weight: 600;
+        background: #0a66c2;
+        color: white;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button.secondary { background: #666; }
+      .row { display: flex; gap: 8px; }
+      .hint { color: #666; font-size: 12px; margin-top: 6px; }
+      .status { margin-top: 12px; }
+      .ok { color: #080; }
+      .error { color: #c00; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>CyOps Capture — Options</h1>
+
+    <label for="backendUrl">Backend URL</label>
+    <input id="backendUrl" type="url" placeholder="http://localhost:8000" />
+    <div class="hint">The host running the CyberOps backend. Usually http://localhost:8000.</div>
+
+    <label for="token">Pairing token</label>
+    <input id="token" type="password" placeholder="paste from plugin page" />
+    <div class="hint">Generate one on <b>/plugins/browser_extension</b> in the CyberOps app.</div>
+
+    <div class="row">
+      <button id="save">Save</button>
+      <button id="test" class="secondary">Test connection</button>
+    </div>
+    <div id="status" class="status"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# Misc
+*.bak
+*.tmp
+
+# Local secrets and machine-specific app settings (use .env for API keys)
+backend/data/settings.json
+backend/data/privacy_alias_map.json
+backend/data/privacy_alias_map.json.lock
+
+# Remote-server plugin: SSH keys and credentials are per-deployment secrets.
+# Keep them on disk but never in git.
+backend/data/plugins/remote_servers/ssh_keys/
+backend/data/plugins/remote_servers/credentials/
+backend/data/plugins/remote_servers/servers/
+
+# Plugin runtime state (jobs, scratch) should not be tracked.
+backend/data/plugins/hashcat/jobs/
+
+# LLM/analysis caches and simulation runs — runtime artifacts, not source.
+backend/data/query_cache/
+backend/data/insights_cache/
+
+
+# Local snapshots written by in-place refactor scripts.
+.backup/
+
+# Claude Code per-workspace settings.
+.claude/
+
+# Production deploy snapshot (managed out of band).
+prod/
+
+# --- Public-release hardening (added for open-source distribution) ---
+# Private keys / certs must never be committed
+*.pem
+*.pfx
+*.p12
+# Secret settings files (API keys, encrypted credentials)
+settings.json
+backend/data/settings.json
+# Real operational data: keep only the empty directory structure (.gitkeep)
+backend/data/operations/*
+backend/data/sessions/*
+backend/data/screenshots/*
+backend/data/terminal_logs/*
+backend/data/red_team/*
+backend/data/audit/*
+!**/.gitkeep
+.gstack/

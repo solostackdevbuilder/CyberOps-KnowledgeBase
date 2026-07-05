@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CyOps Capture</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        font-size: 13px;
+        margin: 0;
+        padding: 12px;
+        width: 280px;
+        color: #1a1a1a;
+      }
+      h1 { font-size: 14px; margin: 0 0 10px; }
+      label { display: block; margin-top: 8px; font-weight: 600; }
+      select, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font: inherit;
+        padding: 5px 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      textarea { resize: vertical; min-height: 46px; }
+      button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 7px;
+        font: inherit;
+        font-weight: 600;
+        background: #0a66c2;
+        color: white;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:disabled { background: #999; cursor: not-allowed; }
+      .hint { color: #666; font-size: 11px; margin-top: 6px; }
+      .error { color: #c00; font-size: 12px; margin-top: 8px; white-space: pre-wrap; }
+      .ok { color: #080; font-size: 12px; margin-top: 8px; }
+      a { color: #0a66c2; }
+    </style>
+  </head>
+  <body>
+    <h1>CyOps Capture</h1>
+    <label for="session">Session</label>
+    <select id="session"><option value="">Loading…</option></select>
+    <label for="description">Description (optional)</label>
+    <textarea id="description" placeholder="Notes to attach with the capture"></textarea>
+    <button id="capture" disabled>Capture &amp; attach</button>
+    <div id="status"></div>
+    <div class="hint">
+      Tip: use <b>Alt+S</b> to capture straight to the last-used session.
+      <a href="#" id="open-options">Options</a>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
